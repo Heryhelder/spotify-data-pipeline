@@ -1,0 +1,68 @@
+version: 2
+
+sources:
+  - name: user-read-recently-played
+    description: "User's recently played tracks"
+    tables:
+      - name: track
+        description: "Track table"
+        columns:
+          - name: id
+            description: "The primary key for the track table"
+            data_tests:
+              - unique
+              - not_null
+
+          - name: album_id
+            description: "Foreign key references album table"
+            data_tests:
+              - not_null
+
+          - name: duration_ms
+            description: "Track duration in milliseconds"
+            data_tests:
+              - not_null
+
+          - name: explicit
+            description: "If true, track has explicit lyrics"
+            data_tests:
+              - not_null
+
+          - name: name
+            description: "Track name"
+            data_tests:
+              - not_null
+
+          - name: track_number
+            description: "Track number in album"
+            data_tests:
+              - not_null
+
+          - name: played_at
+            description: "Timestamp of when track was played"
+            data_tests:
+              - not_null
+
+      - name: album
+        description: "Album table"
+        columns:
+          - name: id
+            description: "The primary key for the album table"
+            data_tests:
+              - unique
+              - not_null
+
+          - name: name
+            description: "Name of the album"
+            data_tests:
+              - not_null
+
+          - name: release_date
+            description: "Album's release date"
+            data_tests:
+              - not_null
+
+          - name: total_tracks
+            description: "Album's total tracks"
+            data_tests:
+              - not_null
