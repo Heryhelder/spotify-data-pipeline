@@ -6,7 +6,7 @@ def csv_to_parquet(csv_file):
     if csv_file is None:
         return
 
-    ROOT_DATA_PATH = "Data/parquet"
+    ROOT_DATA_PATH = "data/parquet"
 
     if not os.path.exists(ROOT_DATA_PATH):
         os.makedirs(ROOT_DATA_PATH)

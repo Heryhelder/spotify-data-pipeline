@@ -17,7 +17,7 @@ def save_spotify_data(data):
     if data is None:
         return
     
-    ROOT_DATA_PATH = "Data/csv"
+    ROOT_DATA_PATH = "data/csv"
 
     if not os.path.exists(ROOT_DATA_PATH):
         os.makedirs(ROOT_DATA_PATH)

@@ -23,7 +23,7 @@ def insert_data_postgres():
     conn = connect_to_postgres()
     cursor = conn.cursor()
 
-    data = get_parquet_data("Data/parquet/spotify_data_2025-06-18.parquet")
+    data = get_parquet_data("data/parquet/spotify_data_2025-06-18.parquet")
 
     insert_album_data = """
         INSERT INTO "user-read-recently-played".album (id, name, release_date, total_tracks)
