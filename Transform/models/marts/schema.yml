@@ -54,3 +54,21 @@ models:
         description: "Date's year in integer format"
         data_tests:
           - not_null
+
+  - name: fact_listenings
+    description: "Listenings fact table"
+    columns:
+      - name: album_id
+        description: "Foreign key references album dimension table"
+        data_tests:
+          - not_null
+
+      - name: date_id
+        description: "Foreign key references date dimension table"
+        data_tests:
+          - not_null
+
+      - name: total_listenings
+        description: "Total number of listenings"
+        data_tests:
+          - not_null
