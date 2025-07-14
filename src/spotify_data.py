@@ -27,7 +27,7 @@ class SpotifyData:
         if not os.path.exists(os.path.join(self.root_data_path, "csv")):
             os.makedirs(os.path.join(self.root_data_path, "csv"))
 
-        dest_data_path = os.path.join(self.root_data_path, "csv", f"spotify_data_{datetime.datetime.now().strftime("%Y-%m-%d")}.csv")
+        dest_data_path = os.path.join(self.root_data_path, "csv", f"spotify_data_{datetime.datetime.now().strftime('%Y-%m-%d')}.csv")
 
         df = pd.json_normalize(data["items"])
         df.to_csv(dest_data_path, index=False)
@@ -41,7 +41,7 @@ class SpotifyData:
         if not os.path.exists(os.path.join(self.root_data_path, "parquet")):
             os.makedirs(os.path.join(self.root_data_path, "parquet"))
 
-        dest_data_path = os.path.join(self.root_data_path, "parquet", f"spotify_data_{datetime.datetime.now().strftime("%Y-%m-%d")}.parquet")
+        dest_data_path = os.path.join(self.root_data_path, "parquet", f"spotify_data_{datetime.datetime.now().strftime('%Y-%m-%d')}.parquet")
 
         df = pd.read_csv(csv_file_path)
         df.to_parquet(dest_data_path)
@@ -101,4 +101,3 @@ class SpotifyData:
         finally:
             cursor.close()
             conn.close()
-
